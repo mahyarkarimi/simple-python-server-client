@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${PORT-5000}:5000
+    restart: unless-stopped
+    environment:
+      - BAUBUDDY_URL=https://api.baubuddy.de/
+      - BAUBUDDY_AUTH=QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz
+      - BAUBUDDY_USERNAME=365
+      - BAUBUDDY_PASSWORD=1
